@@ -2,15 +2,17 @@ baseURL = "https://shr3kk-fr.github.io/shr3k/"
 languageCode = "en-us"
 theme = "poison"
 
+
 [params]
   brand = "/home/shr3k"
-  brand_image = '/image/cross.webp'
+  brand_image = "/shr3k/image/cross.webp"
+  relativeURLs = true
   description = "student passionate with side questing <3"
   dark_mode = true  
 
   menu = [
-        {Name = "About", URL = "/about/", HasChildren = false},
-        {Name = "Posts", URL = "/posts/"},
+        {Name = "About", URL = "/shr3k/about/", HasChildren = false},
+        {Name = "Posts", URL = "/shr3k/posts/", Pre = "Recent", HasChildren = false, Limit = 5},
     ]
     github_url = "https://github.com/shr3kk-fr"
     linkedin_url = "https://www.linkedin.com/in/esteban-fleury-54b531251/"
@@ -19,11 +21,7 @@ theme = "poison"
     email_url = "mailto://esteban.fleury@efrei.net"
 
   
-    # NOTE: If you don't want to use RSS, comment or delete the following lines
-    # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
-    rss_icon = true
-    # Which section the RSS icon links to, defaults to all content. See https://gohugo.io/templates/rss/#section-rss
-    rss_section = "posts"
+    
 
     # Hex colors for your sidebar.
     moon_sun_background_color = "#515151"   # default is #515151
