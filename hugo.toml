@@ -1,4 +1,4 @@
-baseURL = "shr3kk-fr.github.io/shr3k/"
+baseURL = "https://shr3kk-fr.github.io/shr3k/"
 languageCode = "en-us"
 theme = "poison"
 paginate = 10
