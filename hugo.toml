@@ -1,52 +1,24 @@
 baseURL = "https://shr3kk-fr.github.io/shr3k/"
 languageCode = "en-us"
 theme = "poison"
-   # removes the automatically appended "s" on sidebar entries
-
-# NOTE: If using Disqus as commenting engine, uncomment and configure this line
-# disqusShortname = "yourDisqusShortname"
 
 [params]
-    brand = "Poison"                      # name of your site - appears in the sidebar
-    # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
-    # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
-    description = "Update this description..." # Used as default meta description if not specified in front matter
-    dark_mode = true                      # optional - defaults to false
-    # favicon = "favicon.png"             # path to favicon (defaults to favicon.png)
+  brand = "/home/shr3k"
+  brand_image = '/image/cross.webp'
+  description = "student passionate with side questing <3"
+  dark_mode = true  
 
-    front_page_content = ["posts"] # Equivalent to the default value, add page bundle names to include them on the front page.
-
-    # MENU PLACEHOLDER
-    # Menu dict keys:
-        # Name:         The name to display on the menu.
-        # URL:          The directory relative to the content directory.
-        # HasChildren:  If the directory's files should be listed.  Default is true.
-        # Limit:        If the files should be listed, how many should be shown.
-    menu = [
+  menu = [
         {Name = "About", URL = "/about/", HasChildren = false},
-        {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
+        {Name = "Posts", URL = "/posts/"},
     ]
+    github_url = "https://github.com/shr3kk-fr"
+    linkedin_url = "https://www.linkedin.com/in/esteban-fleury-54b531251/"
+    youtube_url = "https://www.youtube.com/@br0kenpianistonytb"
+    tryhackme_url = "https://www.root-me.org/Esteban-1037612"
+    email_url = "mailto://esteban.fleury@efrei.net"
 
-    # Links to your socials.  Comment or delete any you don't need/use. 
-    discord_url = "https://discord.com"
-    email_url = "mailto://user@domain"
-    facebook_url = "https://facebook.com"
-    flickr_url = "https://flickr.com"
-    github_url = "https://github.com"
-    gitlab_url = "https://gitlab.com"
-    instagram_url = "https://instagram.com"
-    linkedin_url = "https://linkedin.com"
-    mastodon_url = "https://mastodon.social"
-    matrix_url = "https://matrix.org"
-    telegram_url = "https://telegram.org"
-    tryhackme_url = "https://tryhackme.com"
-    twitter_url = "https://twitter.com"
-    x_url = "https://x.com"
-    xmpp_url = "https://xmpp.org"
-    youtube_url = "https://youtube.com"
-    signal_url = "https://signal.org"
-    bluesky_url = "https://bsky.app"
-
+  
     # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
     rss_icon = true
