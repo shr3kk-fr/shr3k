@@ -1,3 +1,29 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: My New Hugo Site
+title: este's blog
+theme: PaperMod
+
+enableEmoji: true
+
+params:
+      profileMode:
+        enabled: true
+        defaultTheme: dark
+        title: /home/este
+        imageUrl: "https://images.steamusercontent.com/ugc/15093909593042542774/63E7D896729195E9FA8612FFEC7A40B630F68177/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+        imageTitle: ProfileMode image
+        imageWidth: 200 
+        imageHeight: 200
+        subtitle: "Student passionate about side quests"
+        
+      socialIcons:
+        - name: "github"
+          url: "https://github.com/shr3kk-fr"
+        - name: "linkedin"
+          url: "https://www.linkedin.com/in/esteban-fleury-54b531251/"
+        - name: "rootme"
+          url: "https://www.root-me.org/Esteban-1037612"
+        - name: "youtube"
+          url: "https://www.youtube.com/@br0kenpianistonytb"   
+        - name: "strava"
+          url: "https://www.strava.com/athletes/40554212"
