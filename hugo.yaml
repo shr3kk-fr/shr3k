@@ -1,4 +1,4 @@
-baseURL = "https://5hr3k.xyz/"
+baseURL: https://5hr3k.xyz/
 languageCode: en-us
 title: le blog
 theme: PaperMod

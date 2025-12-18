@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web3 on le blog</title>
+    <link>http://localhost:1313/shr3k/tags/web3/</link>
+    <description>Recent content in Web3 on le blog</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 11 Dec 2025 16:14:57 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/shr3k/tags/web3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xmas List3 | Root Xmas CTF 2025</title>
+      <link>http://localhost:1313/shr3k/writeups/web3-xmas-ctf/</link>
+      <pubDate>Thu, 11 Dec 2025 16:14:57 +0100</pubDate>
+      <guid>http://localhost:1313/shr3k/writeups/web3-xmas-ctf/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;figure class=&#34;center-fig&#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/shr3k/image/key-magic-key.gif&#34;
+         alt=&#34;Magic Key&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;Last year, Santa noticed that some mischievous elves had been diverting gifts!&lt;/p&gt;
+&lt;p&gt;This year, he decided to secure his entire supply chain using blockchain technology.&lt;/p&gt;
+&lt;p&gt;But since Santa isn’t exactly comfortable with this new system, the developer gave him a special key that lets him hand over the distribution process &amp;ldquo;safely&amp;rdquo;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;We have presented a little website with this info&lt;/p&gt;
+&lt;p&gt;|Your private key  |   0x6715d324d14e0565ab02a575fa5f74540719ba065a610cba6497cdbf22cd5cdb|
+|Your address   |  0xCaffE305b3Cc9A39028393D3F338f2a70966Cb85|
+|Challenge&amp;rsquo;s address  |   0xA79e1213be40bff69dF39Fd1Fd50555e80aB1B40|
+|RPC URL  |   &lt;a href=&#34;http://dyn-01.xmas.root-me.org:13021/rpc&#34;&gt;http://dyn-01.xmas.root-me.org:13021/rpc&lt;/a&gt;|
+|Chain ID  |   1337|
+|Flag |Whatever|&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

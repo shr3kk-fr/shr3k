@@ -1,0 +1,14 @@
+/* Center images when using the figure shortcode class */
+.center-fig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Optional: Center the image itself if it's smaller than the container */
+.center-fig img {
+    margin: 0 auto;
+    display: block;
+}
