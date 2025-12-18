@@ -1,15 +1,28 @@
-baseURL: https://shrekk-fr/shr3k/
+baseURL = "https://5hr3k.xyz/"
 languageCode: en-us
-title: este's blog
+title: le blog
 theme: PaperMod
 
 enableEmoji: true
 
+languages:
+  en:
+    languageName: "English"
+    weight: 1 
+
+    menu:
+       main:
+         - name: home
+           url: /
+         - name: writeups
+           url: /writeups
+         - name: Archive
+           url: archives/
 params:
       profileMode:
         enabled: true
         defaultTheme: dark
-        title: /home/este
+        title: $ shr3k
         imageUrl: "https://images.steamusercontent.com/ugc/15093909593042542774/63E7D896729195E9FA8612FFEC7A40B630F68177/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
         imageTitle: ProfileMode image
         imageWidth: 200 
