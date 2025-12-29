@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/shr3k/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=shr3k/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>Santa Secret Memes 1 | Root Xmas CTF 2025 | le blog</title>
+<meta name="robots" content="index, follow">
+<title>PKZIP vulnerabilty | Root Xmas CTF 2025 | le blog</title>
 <meta name="keywords" content="misc, steagno">
-<meta name="description" content="Introduction
+<meta name="description" content="Author : Evix
+Introduction
+
+     
+
+
 A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look&hellip; elf-incriminating.
 Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?
 Recon
@@ -17,16 +22,16 @@ Archive:  santa-secret-memes.zip
 [santa-secret-memes.zip] dark_style.jpg password:
 Let&rsquo;s take a look at our santa-secret-memes.zip using zipinfo">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/shr3k/writeups/root-xmas-ctf/">
-<link crossorigin="anonymous" href="/shr3k/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/shr3k/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/shr3k/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/shr3k/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/shr3k/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/shr3k/safari-pinned-tab.svg">
+<link rel="canonical" href="https://5hr3k.xyz/writeups/root-xmas-ctf/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://5hr3k.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://5hr3k.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://5hr3k.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://5hr3k.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://5hr3k.xyz/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/shr3k/writeups/root-xmas-ctf/">
+<link rel="alternate" hreflang="en" href="https://5hr3k.xyz/writeups/root-xmas-ctf/">
 <noscript>
     <style>
         #theme-toggle,
@@ -78,13 +83,94 @@ Let&rsquo;s take a look at our santa-secret-memes.zip using zipinfo">
         document.querySelector("html").dataset.theme = 'light';
     }
 
+</script><meta property="og:url" content="https://5hr3k.xyz/writeups/root-xmas-ctf/">
+  <meta property="og:site_name" content="le blog">
+  <meta property="og:title" content="PKZIP vulnerabilty | Root Xmas CTF 2025">
+  <meta property="og:description" content="Author : Evix
+Introduction A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look… elf-incriminating.
+Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?
+Recon The zip file is protected with a password :
+shr3k@shr3k:~$ unzip santa-secret-memes.zip Archive: santa-secret-memes.zip [santa-secret-memes.zip] dark_style.jpg password: Let’s take a look at our santa-secret-memes.zip using zipinfo">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="writeups">
+    <meta property="article:published_time" content="2025-12-10T10:19:30+01:00">
+    <meta property="article:modified_time" content="2025-12-10T10:19:30+01:00">
+    <meta property="article:tag" content="Misc">
+    <meta property="article:tag" content="Stegano">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PKZIP vulnerabilty | Root Xmas CTF 2025">
+<meta name="twitter:description" content="Author : Evix
+Introduction
+
+     
+
+
+A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look&hellip; elf-incriminating.
+Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?
+Recon
+The zip file is protected with a password :
+shr3k@shr3k:~$ unzip santa-secret-memes.zip 
+Archive:  santa-secret-memes.zip
+[santa-secret-memes.zip] dark_style.jpg password:
+Let&rsquo;s take a look at our santa-secret-memes.zip using zipinfo">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Writeups",
+      "item": "https://5hr3k.xyz/writeups/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "PKZIP vulnerabilty | Root Xmas CTF 2025",
+      "item": "https://5hr3k.xyz/writeups/root-xmas-ctf/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PKZIP vulnerabilty | Root Xmas CTF 2025",
+  "name": "PKZIP vulnerabilty | Root Xmas CTF 2025",
+  "description": "Author : Evix\nIntroduction A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look\u0026hellip; elf-incriminating.\nCan you crack the archive and uncover the secret Santa hoped to keep under wraps ?\nRecon The zip file is protected with a password :\nshr3k@shr3k:~$ unzip santa-secret-memes.zip Archive: santa-secret-memes.zip [santa-secret-memes.zip] dark_style.jpg password: Let\u0026rsquo;s take a look at our santa-secret-memes.zip using zipinfo\n",
+  "keywords": [
+    "misc", "steagno"
+  ],
+  "articleBody": "Author : Evix\nIntroduction A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look… elf-incriminating.\nCan you crack the archive and uncover the secret Santa hoped to keep under wraps ?\nRecon The zip file is protected with a password :\nshr3k@shr3k:~$ unzip santa-secret-memes.zip Archive: santa-secret-memes.zip [santa-secret-memes.zip] dark_style.jpg password: Let’s take a look at our santa-secret-memes.zip using zipinfo\nshr3k@shr3k:~$ zipinfo -Z santa-secret-memes.zip Archive: santa-secret-memes.zip Zip file size: 605772 bytes, number of entries: 7 -rw-r--r-- 3.0 unx 103341 BX defN 25-Dec-09 02:05 dark_style.jpg -rw-r--r-- 3.0 unx 124973 BX defN 25-Dec-09 02:05 green_bench.jpg -rw-r--r-- 3.0 unx 98878 BX defN 25-Dec-09 02:05 just_a_dream.jpg -rw-r--r-- 3.0 unx 85890 BX defN 25-Dec-09 02:05 mod_meme.jpg -rw-r--r-- 3.0 unx 1221 BX stor 25-Dec-09 02:05 portrait.jpg -rw-r--r-- 3.0 unx 81268 BX defN 25-Dec-09 02:05 raccoon.jpg -rw-r--r-- 3.0 unx 109829 BX defN 25-Dec-09 02:05 rev_meme.jpg 7 files, 605400 bytes uncompressed, 604474 bytes compressed: 0.2% Take a look at stor, this means no compression was applied to the ‘portrait.jpg’ file.\nWith this information we can perform a Known Plaintext Attack on the PKZIP stream cipher.\nTo perform this attack we need to guess the first 12 bytes of the corresponding plaintext.\nThe most common JPEG 12 bytes are FF D8 FF E0 00 10 4A 46 49 46 00 01\nPKA attack using bkcrack Just write this out in a file jpg_header.bin\nshr3k@shr3k:~$ echo -ne '\\xFF\\xD8\\xFF\\xE0\\x00\\x10\\x4A\\x46\\x49\\x46\\x00\\x01' \u003e jpg_header.bin Then we can use bkcrack recover the internal keys\nshr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c portrait.jpg -p jpg_header.bin bkcrack 1.8.1 - 2025-10-25 [11:47:25] Z reduction using 5 bytes of known plaintext 100.0 % (5 / 5) [11:47:25] Attack on 1127172 Z values at index 6 Keys: 4c0a34dd 9f68579b 9fd87f2f 11.5 % (129829 / 1127172) Found a solution. Stopping. You may resume the attack with the option: --continue-attack 129829 [11:49:47] Keys 4c0a34dd 9f68579b 9fd87f2f After 2 minutes, we finally recover the keys 4c0a34dd 9f68579b 9fd87f2f.\nWe can use them to recover all the archives files\nshr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c dark_style.jpg -k aca16b21 8fb459a8 89c3e395 -d dark_style_raw.jpg Recover the images Then we can use deflate.py in the tools folder to decompresse the image, remember the other files were compressed !\nshr3k@shr3k:~/bkcrack/install$ python3 tools/inflate.py \u003c dark_style_raw.deflate \u003e dark_style.jpg We get this nice meme\nStegano After recovering all the images, there is no apparent flag.\nI decide to run an exiftool to see if there’s any hidden information in the images.\nAfter testing a bunch we get :\nshr3k@shr3k:~$ exiftool dream.jpg ExifTool Version Number : 12.76 File Name : dream.jpg Directory : . File Size : 99 kB File Modification Date/Time : 2025:12:09 18:10:31+01:00 File Access Date/Time : 2025:12:09 18:10:35+01:00 File Inode Change Date/Time : 2025:12:09 18:10:31+01:00 File Permissions : -rw-rw-r-- File Type : JPEG File Type Extension : jpg MIME Type : image/jpeg JFIF Version : 1.01 Exif Byte Order : Big-endian (Motorola, MM) Image Description : b64(passphrase)=bWFnaWNfa2V5 X Resolution : 1 Y Resolution : 1 Resolution Unit : None Y Cb Cr Positioning : Centered Exif Version : 0232 Components Configuration : Y, Cb, Cr, - User Comment : Well you find a tool and a key, time to find the good image 🥸 Flashpix Version : 0100 Color Space : Uncalibrated Comment : tool: steghide | passphrase=magic_key Image Width : 457 Image Height : 446 Encoding Process : Baseline DCT, Huffman coding Bits Per Sample : 8 Color Components : 3 Y Cb Cr Sub Sampling : YCbCr4:4:4 (1 1) Image Size : 457x446 Megapixels : 0.204 Check this out, in the user comment we find a tool and a key.\nshr3k@shr3k:~$ steghide extract -sf gn.jpg -p magic_key Ecriture des donnees extraites dans \"flag.txt\". shr3k@shr3k:~$ cat flag.txt RM{s4nt4_l0v3s_st3g4n0} Happy new year !\n",
+  "wordCount" : "627",
+  "inLanguage": "en",
+  "datePublished": "2025-12-10T10:19:30+01:00",
+  "dateModified": "2025-12-10T10:19:30+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://5hr3k.xyz/writeups/root-xmas-ctf/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "le blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://5hr3k.xyz/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/shr3k/" accesskey="h" title="le blog (Alt + H)">le blog</a>
+            <a href="https://5hr3k.xyz/" accesskey="h" title="le blog (Alt + H)">le blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -110,17 +196,17 @@ Let&rsquo;s take a look at our santa-secret-memes.zip using zipinfo">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/shr3k/archives/" title="Archive">
+                <a href="https://5hr3k.xyz/archives/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/shr3k/" title="home">
+                <a href="https://5hr3k.xyz/" title="home">
                     <span>home</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/shr3k/writeups" title="writeups">
+                <a href="https://5hr3k.xyz/writeups" title="writeups">
                     <span>writeups</span>
                 </a>
             </li>
@@ -133,15 +219,9 @@ Let&rsquo;s take a look at our santa-secret-memes.zip using zipinfo">
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Santa Secret Memes 1 | Root Xmas CTF 2025
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
+      PKZIP vulnerabilty | Root Xmas CTF 2025
     </h1>
-    <div class="post-meta"><span title='2025-12-10 10:19:30 +0100 CET'>December 10, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>628 words</span>
+    <div class="post-meta"><span title='2025-12-10 10:19:30 +0100 CET'>December 10, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>627 words</span>
 
 </div>
   </header> <div class="toc">
@@ -156,14 +236,19 @@ Let&rsquo;s take a look at our santa-secret-memes.zip using zipinfo">
     <li><a href="#recon">Recon</a></li>
     <li><a href="#pka-attack-using-bkcrack">PKA attack using bkcrack</a></li>
     <li><a href="#recover-the-images">Recover the images</a></li>
-    <li><a href="#still-no-flag--stegano">Still no flag ? Stegano</a></li>
+    <li><a href="#stegano">Stegano</a></li>
   </ul>
 </nav>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+  <div class="post-content"><p>Author : Evix</p>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<figure>
+    <img loading="lazy" src="/image/santa-claus-chimney.gif"/> 
+</figure>
+
 <p>A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look&hellip; elf-incriminating.</p>
 <p>Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?</p>
 <h2 id="recon">Recon<a hidden class="anchor" aria-hidden="true" href="#recon">#</a></h2>
@@ -211,10 +296,10 @@ You may resume the attack with the option: --continue-attack 129829
 <pre tabindex="0"><code>shr3k@shr3k:~/bkcrack/install$ python3 tools/inflate.py &lt; dark_style_raw.deflate &gt; dark_style.jpg
 </code></pre><p>We get this nice meme</p>
 <figure class="right">
-    <img loading="lazy" src="/shr3k/image/pkzip.jpg" width="200px"/> 
+    <img loading="lazy" src="/image/pkzip.jpg" width="200px"/> 
 </figure>
 
-<h2 id="still-no-flag--stegano">Still no flag ? Stegano<a hidden class="anchor" aria-hidden="true" href="#still-no-flag--stegano">#</a></h2>
+<h2 id="stegano">Stegano<a hidden class="anchor" aria-hidden="true" href="#stegano">#</a></h2>
 <p>After recovering all the images, there is no apparent flag.</p>
 <p>I decide to run an <code>exiftool</code> to see if there&rsquo;s any hidden information in the images.</p>
 <p>After testing a bunch we get :</p>
@@ -265,15 +350,15 @@ RM{s4nt4_l0v3s_st3g4n0}
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/shr3k/tags/misc/">Misc</a></li>
-      <li><a href="http://localhost:1313/shr3k/tags/stegano/">Stegano</a></li>
+      <li><a href="https://5hr3k.xyz/tags/misc/">Misc</a></li>
+      <li><a href="https://5hr3k.xyz/tags/stegano/">Stegano</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/shr3k/">le blog</a></span> · 
+        <span>&copy; 2025 <a href="https://5hr3k.xyz/">le blog</a></span> · 
 
     <span>
         Powered by
