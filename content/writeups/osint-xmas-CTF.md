@@ -1,7 +1,7 @@
 ---
 date: '2025-12-11T16:14:57+01:00'
 draft: false
-title: 'Santa osint | Xmasctf'
+title: 'Santa osint | Root Me xmas CTF 2025'
 tags: ["osint"]
 keywords: ["osint"]
 ShowReadingTime: true
