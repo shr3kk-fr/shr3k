@@ -15,7 +15,7 @@ ShowWordCount: true
 ## Introduction
 
 
-{{< figure src="/shr3k/image/key-magic-key.gif" class="center-fig" alt="Magic Key" >}}
+{{< figure src="/image/key-magic-key.gif" class="center-fig" alt="Magic Key" >}}
 
 Last year, Santa noticed that some mischievous elves had been diverting gifts!
 
@@ -25,6 +25,8 @@ But since Santa isn’t exactly comfortable with this new system, the developer 
 
 We have presented a little website with this info 
 
+|Field|Value|
+|----|----|
 |Your private key  |   0x6715d324d14e0565ab02a575fa5f74540719ba065a610cba6497cdbf22cd5cdb|
 |Your address   |  0xCaffE305b3Cc9A39028393D3F338f2a70966Cb85|
 |Challenge's address  |   0xA79e1213be40bff69dF39Fd1Fd50555e80aB1B40|

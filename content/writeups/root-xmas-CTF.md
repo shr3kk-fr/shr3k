@@ -1,8 +1,7 @@
 ---
-authors: este
 date: '2025-12-10T10:19:30+01:00'
-draft: true
-title: 'Santa Secret Memes 1 | Root Xmas CTF 2025'
+draft: false
+title: 'PKZIP vulnerabilty | Root Xmas CTF 2025'
 tags: ["misc", "stegano"]
 keywords: ["misc", "steagno"]
 showtoc: true
@@ -13,7 +12,11 @@ ShowWordCount: true
 
 ---
 
+Author : Evix
+
 ## Introduction
+
+{{< figure src="/image/santa-claus-chimney.gif" >}}
 
 A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look... elf-incriminating.
 
@@ -91,12 +94,12 @@ shr3k@shr3k:~/bkcrack/install$ python3 tools/inflate.py < dark_style_raw.deflate
 We get this nice meme
 
 {{< figure
-    src="/shr3k/image/pkzip.jpg"
+    src="/image/pkzip.jpg"
     width="200px"
     class="right"
 >}}
 
-## Still no flag ? Stegano
+## Stegano
 
 After recovering all the images, there is no apparent flag.
 
