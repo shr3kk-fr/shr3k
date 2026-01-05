@@ -1,0 +1,40 @@
+baseURL = "https://5hr3k.xyz/"
+languageCode = "en-us"
+theme = "poison"
+publishDir = "docs"
+enableEmoji = true
+pluralizelisttitles = false
+
+# Fix for the deprecation warning
+[pagination]
+  pagerSize = 10
+
+[params]
+    brand = "$5hr3k"
+    description = "Student passionate about cybersecurity"
+    dark_mode = true
+    
+    remote_brand_image = "https://images.steamusercontent.com/ugc/15093909593042542774/63E7D896729195E9FA8612FFEC7A40B630F68177/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+
+    # Important: Tell Poison where to find your content
+    front_page_content = ["writeups","about"] 
+    truncate = true
+
+    # Poison Menu Logic
+    menu = [
+        {Name = "home", URL = "/", HasChildren = false},
+        {Name = "about", URL = "/about/", HasChildren = false}, # Add this
+        {Name = "writeups", URL = "/writeups/", HasChildren = false}
+    ]
+
+    # Socials
+    github_url = "https://github.com/shr3kk-fr"
+    linkedin_url = "https://www.linkedin.com/in/esteban-fleury-54b531251/"
+    youtube_url = "https://www.youtube.com/@br0kenpianistonytb"
+    strava_url = "https://www.strava.com/athletes/40554212"
+
+    rss_icon = true
+
+[taxonomies]
+    series = 'series'
+    tags = 'tags'
