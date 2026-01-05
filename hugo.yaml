@@ -2,7 +2,7 @@ baseURL: https://5hr3k.xyz/
 languageCode: en-us
 title: /home
 theme: PaperMod
-
+publishDir: "docs"
 enableEmoji: true
 
 languages:
