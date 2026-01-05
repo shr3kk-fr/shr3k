@@ -15,9 +15,9 @@ languages:
          - name: home
            url: /
          - name: writeups
-           url: /writeups
+           url: /writeups/
          - name: Archive
-           url: archives/
+           url: /archives/
 params:
       profileMode:
         enabled: true
