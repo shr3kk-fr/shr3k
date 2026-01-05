@@ -31,12 +31,13 @@ pluralizelisttitles = false
     ]
 
     # Socials
+    rootme_url = "https://www.root-me.org/Esteban-1037612"
     github_url = "https://github.com/shr3kk-fr"
     linkedin_url = "https://www.linkedin.com/in/esteban-fleury-54b531251/"
     youtube_url = "https://www.youtube.com/@br0kenpianistonytb"
     strava_url = "https://www.strava.com/athletes/40554212"
 
-    rss_icon = true
+ 
 
 [taxonomies]
     series = 'series'
