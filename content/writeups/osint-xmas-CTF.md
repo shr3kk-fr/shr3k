@@ -1,15 +1,15 @@
 ---
 date: '2025-12-11T16:14:57+01:00'
 draft: false
-title: 'Santa osint | Root Me xmas CTF 2025'
-tags: ["osint"]
-keywords: ["osint"]
+title: 'Santa OSINT | Root Me xmas CTF 2025'
+tags: ["OSINT"]
+keywords: ["OSINT"]
 ShowReadingTime: true
 ShowWordCount: true
 ---
 Author: Herethicc
 
-## Introduction
+## Santa Secret Memes
 
 {{< figure src="/image/dog-work.gif" >}}
 
@@ -26,7 +26,7 @@ Lets check the file hash on virus total :
 > bf6a54d181b9bbcb168720b9d466ca27d14ead283220ee5a9e777352c16edca3
 sleighctl.py 
 
-We get a file name **sleightctl.py**
+We get a file name **sleighctl.py**
 
 We copy paste in github and we found this repo : https://github.com/jbashdapuppet/santa-root-kit
 

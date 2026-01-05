@@ -1,14 +1,36 @@
-/* Center images when using the figure shortcode class */
-.center-fig {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-}
+@media screen and (min-width: 1280px) {
+    /* Container positioning */
+    .post-content {
+        position: relative;
+    }
 
-/* Optional: Center the image itself if it's smaller than the container */
-.center-fig img {
-    margin: 0 auto;
-    display: block;
+    /* Floating TOC on the Right */
+    .toc {
+        position: fixed;
+        /* Calculate position to the right of the main column */
+        left: calc((100% + var(--main-width)) / 2 + 20px); 
+        top: 120px;
+        
+        /* Making it wider */
+        width: 300px; 
+        
+        border: 1px solid var(--border);
+        background: var(--code-bg);
+        border-radius: var(--radius);
+        padding: 15px;
+        max-height: 75vh;
+        overflow-y: auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Optional: Improve link styling inside the wide TOC */
+    .toc ul {
+        margin-inline-start: 15px;
+        padding: 0;
+    }
+    
+    .toc a {
+        display: block;
+        padding: 2px 0;
+    }
 }

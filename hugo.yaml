@@ -1,6 +1,6 @@
 baseURL: https://5hr3k.xyz/
 languageCode: en-us
-title: le blog
+title: /home
 theme: PaperMod
 
 enableEmoji: true
@@ -22,12 +22,12 @@ params:
       profileMode:
         enabled: true
         defaultTheme: dark
-        title: $ shr3k
+        title: $5hr3k
         imageUrl: "https://images.steamusercontent.com/ugc/15093909593042542774/63E7D896729195E9FA8612FFEC7A40B630F68177/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
         imageTitle: ProfileMode image
         imageWidth: 200 
         imageHeight: 200
-        subtitle: "Student passionate about side quests"
+        subtitle: "Student passionate about cybersecurity"
         
       socialIcons:
         - name: "github"

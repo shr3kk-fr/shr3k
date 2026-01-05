@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Misc on le blog</title>
-    <link>https://5hr3k.xyz/tags/misc/</link>
-    <description>Recent content in Misc on le blog</description>
+    <title>Misc on /home</title>
+    <link>http://localhost:1313/tags/misc/</link>
+    <description>Recent content in Misc on /home</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Wed, 10 Dec 2025 10:19:30 +0100</lastBuildDate>
-    <atom:link href="https://5hr3k.xyz/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>PKZIP vulnerabilty | Root Xmas CTF 2025</title>
-      <link>https://5hr3k.xyz/writeups/root-xmas-ctf/</link>
+      <title>PKZIP vulnerabilty | Root Me xmas CTF 2025</title>
+      <link>http://localhost:1313/writeups/root-xmas-ctf/</link>
       <pubDate>Wed, 10 Dec 2025 10:19:30 +0100</pubDate>
-      <guid>https://5hr3k.xyz/writeups/root-xmas-ctf/</guid>
+      <guid>http://localhost:1313/writeups/root-xmas-ctf/</guid>
       <description>&lt;p&gt;Author : Evix&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://5hr3k.xyz/image/santa-claus-chimney.gif&#34;/&gt; 
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/image/santa-claus-chimney.gif&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look&amp;hellip; elf-incriminating.&lt;/p&gt;

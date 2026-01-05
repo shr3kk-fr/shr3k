@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on le blog</title>
-    <link>https://5hr3k.xyz/tags/</link>
-    <description>Recent content in Tags on le blog</description>
+    <title>Tags on /home</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on /home</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Thu, 11 Dec 2025 16:14:57 +0100</lastBuildDate>
-    <atom:link href="https://5hr3k.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Osint</title>
-      <link>https://5hr3k.xyz/tags/osint/</link>
+      <title>OSINT</title>
+      <link>http://localhost:1313/tags/osint/</link>
       <pubDate>Thu, 11 Dec 2025 16:14:57 +0100</pubDate>
-      <guid>https://5hr3k.xyz/tags/osint/</guid>
+      <guid>http://localhost:1313/tags/osint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web3</title>
+      <link>http://localhost:1313/tags/web3/</link>
+      <pubDate>Thu, 11 Dec 2025 16:14:57 +0100</pubDate>
+      <guid>http://localhost:1313/tags/web3/</guid>
       <description></description>
     </item>
     <item>
       <title>Misc</title>
-      <link>https://5hr3k.xyz/tags/misc/</link>
+      <link>http://localhost:1313/tags/misc/</link>
       <pubDate>Wed, 10 Dec 2025 10:19:30 +0100</pubDate>
-      <guid>https://5hr3k.xyz/tags/misc/</guid>
+      <guid>http://localhost:1313/tags/misc/</guid>
       <description></description>
     </item>
     <item>
       <title>Stegano</title>
-      <link>https://5hr3k.xyz/tags/stegano/</link>
+      <link>http://localhost:1313/tags/stegano/</link>
       <pubDate>Wed, 10 Dec 2025 10:19:30 +0100</pubDate>
-      <guid>https://5hr3k.xyz/tags/stegano/</guid>
+      <guid>http://localhost:1313/tags/stegano/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,0 +1,40 @@
+@media screen and (min-width: 1280px) {
+    .post-content {
+        position: relative;
+    }
+
+    /* 1. Position the container back to the right and keep it transparent */
+    .toc, .dark .toc {
+        position: fixed;
+        left: calc((100% + var(--main-width)) / 2 + 50px); 
+        top: 120px;
+        width: 320px; 
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0; /* Reset padding to prevent shifting */
+        margin: 0;
+    }
+
+    /* 2. Remove bullet points and align text to the left of the container */
+    .toc ul {
+        list-style-type: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Handle nested items (sub-headings) with a small indent */
+    .toc ul ul {
+        padding-left: 15px !important;
+    }
+
+    /* 4. Ensure links are block-level for easier clicking */
+    .toc li {
+        margin-bottom: 8px;
+    }
+
+    .toc a {
+        text-decoration: none;
+        display: block;
+    }
+}

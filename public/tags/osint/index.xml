@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Osint on le blog</title>
-    <link>https://5hr3k.xyz/tags/osint/</link>
-    <description>Recent content in Osint on le blog</description>
+    <title>OSINT on /home</title>
+    <link>http://localhost:1313/tags/osint/</link>
+    <description>Recent content in OSINT on /home</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Thu, 11 Dec 2025 16:14:57 +0100</lastBuildDate>
-    <atom:link href="https://5hr3k.xyz/tags/osint/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/osint/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Santa osint | Xmasctf</title>
-      <link>https://5hr3k.xyz/writeups/osint-xmas-ctf/</link>
+      <title>Santa OSINT | Root Me xmas CTF 2025</title>
+      <link>http://localhost:1313/writeups/osint-xmas-ctf/</link>
       <pubDate>Thu, 11 Dec 2025 16:14:57 +0100</pubDate>
-      <guid>https://5hr3k.xyz/writeups/osint-xmas-ctf/</guid>
+      <guid>http://localhost:1313/writeups/osint-xmas-ctf/</guid>
       <description>&lt;p&gt;Author: Herethicc&lt;/p&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;santa-secret-memes&#34;&gt;Santa Secret Memes&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://5hr3k.xyz/image/dog-work.gif&#34;/&gt; 
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/image/dog-work.gif&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;Oh no, it looks like the Grinch’s assistant pwned us ! Luckily, our experts managed to recover two key informations:&lt;/p&gt;
@@ -32,19 +32,8 @@ bf6a54d181b9bbcb168720b9d466ca27d14ead283220ee5a9e777352c16edca3&lt;/li&gt;
 &lt;p&gt;bf6a54d181b9bbcb168720b9d466ca27d14ead283220ee5a9e777352c16edca3
 sleighctl.py&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;We get a file name &lt;strong&gt;sleightctl.py&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;We copy paste in github and we found this repo : &lt;a href=&#34;https://github.com/jbashdapuppet/santa-root-kit&#34;&gt;https://github.com/jbashdapuppet/santa-root-kit&lt;/a&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;~/santa-root-kit$ tree
-.
-├── Disclaimer
-├── etc
-│   └── santa.conf
-├── lib
-│   ├── elf_parser.py
-│   └── reindeer_hooks.py
-├── README.md
-└── sleighctl.py
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After checking the commits we found a nice fake flag :&lt;/p&gt;</description>
+&lt;p&gt;We get a file name &lt;strong&gt;sleighctl.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We copy paste in github and we found this repo : &lt;a href=&#34;https://github.com/jbashdapuppet/santa-root-kit&#34;&gt;https://github.com/jbashdapuppet/santa-root-kit&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
