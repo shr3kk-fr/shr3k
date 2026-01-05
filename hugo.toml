@@ -5,6 +5,9 @@ publishDir = "docs"
 enableEmoji = true
 pluralizelisttitles = false
 
+[aliases]
+  "/" = ["/about/"]
+
 # Fix for the deprecation warning
 [pagination]
   pagerSize = 10
