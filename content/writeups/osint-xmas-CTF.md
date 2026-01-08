@@ -9,9 +9,7 @@ ShowWordCount: true
 ---
 Author: Herethicc
 
-## Santa Secret Memes
-
-{{< figure src="/image/dog-work.gif" >}}
+## Context
 
 Oh no, it looks like the Grinch’s assistant pwned us ! Luckily, our experts managed to recover two key informations:
 
@@ -20,15 +18,30 @@ Oh no, it looks like the Grinch’s assistant pwned us ! Luckily, our experts ma
 bf6a54d181b9bbcb168720b9d466ca27d14ead283220ee5a9e777352c16edca3
 > - A leaked message that said more intels can be found somewhere in a vault.
 
+## Hash check analysis
 
-Lets check the file hash on virus total :
+Lets check the file hash on virus total
 
-> bf6a54d181b9bbcb168720b9d466ca27d14ead283220ee5a9e777352c16edca3
-sleighctl.py 
+{{< figure src="/image/virustotal.png" >}}
 
 We get a file name **sleighctl.py**
 
-We copy paste in github and we found this repo : https://github.com/jbashdapuppet/santa-root-kit
+{{< figure src="/image/code.png" >}}
+
+## Repository analysis
+
+By copy pasting the python file on github we can find the associate repo including the file :
+
+{{< figure src="/image/github.png" >}}
+
+> - https://github.com/jbashdapuppet/santa-root-kit
+
+Let's have a look
+
+```
+git clone https://github.com/jbashdapuppet/santa-root-kit
+cd santa-root-kit/
+```
 
 ```
 ~/santa-root-kit$ tree
@@ -43,7 +56,7 @@ We copy paste in github and we found this repo : https://github.com/jbashdapuppe
 └── sleighctl.py
 ```
 
-After checking the commits we found a nice fake flag :
+Check the commits 
 
 
 ```
@@ -70,17 +83,29 @@ index 3ad6880..0b9a91b 100644
 }
 ```
 
-And we found another intersting comments and the end of the **sleighctl.py** file :
+Unfortunately RM{D1D_Y0U_r3411Y_7H1N6_17_W0U1D_83_7H47_345Y} is a fake flag
+
+After inspecting the **sleighctl.py** file, there is an interesting comment
 
 ```
 +#TODO: Optimize the code / Add comments / Replace our PGP key on "that website"
 ```
 
-We can guess that there is a PGP key in a certain website, after some research i found this website where there is the same username https://keybase.io/jbashdapuppet/
+We can guess that there is a PGP key in a certain website
 
-Bingo !
+After some research, we found the same username on keybase 
 
-Look at what we found on this website:
+> - https://keybase.io/jbashdapuppet/
+
+This is a jackpot !
+
+## Extract the information
+
+This is the website
+
+{{< figure src ="/image/keybase.png" >}}
+
+Some commands
 ```
 jbashdapuppet's public key
 fingerprint:	3E5D3EC729A1814055DA68A22A2E08081E78AB3D
@@ -104,7 +129,12 @@ gpg: clef 2A2E08081E78AB3D : clef publique « jasonbashdapuppet (Temporary key, 
 gpg: Quantité totale traitée : 1
 gpg:               importées : 1
 ```
-We get a nice proton drive link with a flag.txt file inside:
+We get a nice proton drive link
 
-RM{H0_H0_H0_1_M16H7_83_1N_7r0U813}
+> - https://drive.proton.me/urls/MEK165VH8R#PhiRcVi8lCw1
+
+{{< figure src="/image/proton.png" >}}
+
+The flag is inside the flag.txt file
+
 

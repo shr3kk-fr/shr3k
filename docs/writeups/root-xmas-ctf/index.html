@@ -390,13 +390,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 </div>
 
   <p>Author : Evix</p>
-<h2 id="introduction">Introduction</h2>
-<figure><img src="/image/santa-claus-chimney.gif">
-</figure>
-
+<h2 id="context">Context</h2>
 <p>A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look&hellip; elf-incriminating.</p>
 <p>Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?</p>
-<h2 id="recon">Recon</h2>
+<h2 id="zip-analysis">Zip analysis</h2>
 <p>The zip file is protected with a password :</p>
 <pre tabindex="0"><code>shr3k@shr3k:~$ unzip santa-secret-memes.zip 
 Archive:  santa-secret-memes.zip
@@ -437,7 +434,7 @@ You may resume the attack with the option: --continue-attack 129829
 <p>We can use them to recover all the archives files</p>
 <pre tabindex="0"><code>shr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c dark_style.jpg -k aca16b21 8fb459a8 89c3e395 -d dark_style_raw.jpg
 </code></pre><h2 id="recover-the-images">Recover the images</h2>
-<p>Then we can use <code>deflate.py</code> in the <code>tools</code> folder to decompresse the image, remember the other files were compressed !</p>
+<p>Then we can use <code>deflate.py</code> in the <code>tools</code> folder to decompress the image, remember the other files were compressed !</p>
 <pre tabindex="0"><code>shr3k@shr3k:~/bkcrack/install$ python3 tools/inflate.py &lt; dark_style_raw.deflate &gt; dark_style.jpg
 </code></pre><p>We get this nice meme</p>
 <figure class="right"><img src="/image/pkzip.jpg" width="200px">
@@ -512,8 +509,8 @@ RM{s4nt4_l0v3s_st3g4n0}
       <h4 id="contents"></h4>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#recon">Recon</a></li>
+    <li><a href="#context">Context</a></li>
+    <li><a href="#zip-analysis">Zip analysis</a></li>
     <li><a href="#pka-attack-using-bkcrack">PKA attack using bkcrack</a></li>
     <li><a href="#recover-the-images">Recover the images</a></li>
     <li><a href="#stegano">Stegano</a></li>

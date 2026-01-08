@@ -386,10 +386,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 </div>
 
   <p>Author: Herethicc</p>
-<h2 id="santa-secret-memes">Santa Secret Memes</h2>
-<figure><img src="/image/dog-work.gif">
-</figure>
-
+<h2 id="context">Context</h2>
 <p>Oh no, it looks like the Grinch’s assistant pwned us ! Luckily, our experts managed to recover two key informations:</p>
 <blockquote>
 <ul>
@@ -398,14 +395,29 @@ bf6a54d181b9bbcb168720b9d466ca27d14ead283220ee5a9e777352c16edca3</li>
 <li>A leaked message that said more intels can be found somewhere in a vault.</li>
 </ul>
 </blockquote>
-<p>Lets check the file hash on virus total :</p>
-<blockquote>
-<p>bf6a54d181b9bbcb168720b9d466ca27d14ead283220ee5a9e777352c16edca3
-sleighctl.py</p>
-</blockquote>
+<h2 id="hash-check-analysis">Hash check analysis</h2>
+<p>Lets check the file hash on virus total</p>
+<figure><img src="/image/virustotal.png">
+</figure>
+
 <p>We get a file name <strong>sleighctl.py</strong></p>
-<p>We copy paste in github and we found this repo : <a href="https://github.com/jbashdapuppet/santa-root-kit" target="_blank">https://github.com/jbashdapuppet/santa-root-kit</a></p>
-<pre tabindex="0"><code>~/santa-root-kit$ tree
+<figure><img src="/image/code.png">
+</figure>
+
+<h2 id="repository-analysis">Repository analysis</h2>
+<p>By copy pasting the python file on github we can find the associate repo including the file :</p>
+<figure><img src="/image/github.png">
+</figure>
+
+<blockquote>
+<ul>
+<li><a href="https://github.com/jbashdapuppet/santa-root-kit" target="_blank">https://github.com/jbashdapuppet/santa-root-kit</a></li>
+</ul>
+</blockquote>
+<p>Let&rsquo;s have a look</p>
+<pre tabindex="0"><code>git clone https://github.com/jbashdapuppet/santa-root-kit
+cd santa-root-kit/
+</code></pre><pre tabindex="0"><code>~/santa-root-kit$ tree
 .
 ├── Disclaimer
 ├── etc
@@ -415,7 +427,7 @@ sleighctl.py</p>
 │   └── reindeer_hooks.py
 ├── README.md
 └── sleighctl.py
-</code></pre><p>After checking the commits we found a nice fake flag :</p>
+</code></pre><p>Check the commits</p>
 <pre tabindex="0"><code>~/santa-root-kit$ git log -p
 
 commit cff1a5dcff4a348824956daf4541532bb4d73048 (HEAD -&gt; main, origin/main, origin/HEAD)
@@ -437,11 +449,23 @@ index 3ad6880..0b9a91b 100644
          &#34;dasher_filecloak&#34;
      ]
 }
-</code></pre><p>And we found another intersting comments and the end of the <strong>sleighctl.py</strong> file :</p>
+</code></pre><p>Unfortunately RM{D1D_Y0U_r3411Y_7H1N6_17_W0U1D_83_7H47_345Y} is a fake flag</p>
+<p>After inspecting the <strong>sleighctl.py</strong> file, there is an interesting comment</p>
 <pre tabindex="0"><code>+#TODO: Optimize the code / Add comments / Replace our PGP key on &#34;that website&#34;
-</code></pre><p>We can guess that there is a PGP key in a certain website, after some research i found this website where there is the same username <a href="https://keybase.io/jbashdapuppet/" target="_blank">https://keybase.io/jbashdapuppet/</a></p>
-<p>Bingo !</p>
-<p>Look at what we found on this website:</p>
+</code></pre><p>We can guess that there is a PGP key in a certain website</p>
+<p>After some research, we found the same username on keybase</p>
+<blockquote>
+<ul>
+<li><a href="https://keybase.io/jbashdapuppet/" target="_blank">https://keybase.io/jbashdapuppet/</a></li>
+</ul>
+</blockquote>
+<p>This is a jackpot !</p>
+<h2 id="extract-the-information">Extract the information</h2>
+<p>This is the website</p>
+<figure><img src="/image/keybase.png">
+</figure>
+
+<p>Some commands</p>
 <pre tabindex="0"><code>jbashdapuppet&#39;s public key
 fingerprint:	3E5D3EC729A1814055DA68A22A2E08081E78AB3D
 64-bit: 	2A2E08081E78AB3D
@@ -461,8 +485,16 @@ keybase pgp pull jbashdapuppet
 gpg: clef 2A2E08081E78AB3D : clef publique « jasonbashdapuppet (Temporary key, replace with the one located at https://drive.proton.me/urls/MEK165VH8R#PhiRcVi8lCw1) jbash@tutamail.com » importée
 gpg: Quantité totale traitée : 1
 gpg:               importées : 1
-</code></pre><p>We get a nice proton drive link with a flag.txt file inside:</p>
-<p>RM{H0_H0_H0_1_M16H7_83_1N_7r0U813}</p>
+</code></pre><p>We get a nice proton drive link</p>
+<blockquote>
+<ul>
+<li><a href="https://drive.proton.me/urls/MEK165VH8R#PhiRcVi8lCw1" target="_blank">https://drive.proton.me/urls/MEK165VH8R#PhiRcVi8lCw1</a></li>
+</ul>
+</blockquote>
+<figure><img src="/image/proton.png">
+</figure>
+
+<p>The flag is inside the flag.txt file</p>
 
   
   <hr>
@@ -485,7 +517,10 @@ gpg:               importées : 1
       <h4 id="contents"></h4>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#santa-secret-memes">Santa Secret Memes</a></li>
+    <li><a href="#context">Context</a></li>
+    <li><a href="#hash-check-analysis">Hash check analysis</a></li>
+    <li><a href="#repository-analysis">Repository analysis</a></li>
+    <li><a href="#extract-the-information">Extract the information</a></li>
   </ul>
 </nav>
     </div>

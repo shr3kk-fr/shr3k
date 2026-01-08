@@ -14,15 +14,13 @@ ShowWordCount: true
 
 Author : Evix
 
-## Introduction
-
-{{< figure src="/image/santa-claus-chimney.gif" >}}
+## Context
 
 A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look... elf-incriminating.
 
 Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?
 
-## Recon
+## Zip analysis
 
 The zip file is protected with a password : 
 ```
@@ -86,7 +84,7 @@ We can use them to recover all the archives files
 shr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c dark_style.jpg -k aca16b21 8fb459a8 89c3e395 -d dark_style_raw.jpg
 ```
 ## Recover the images
-Then we can use ```deflate.py``` in the ```tools``` folder to decompresse the image, remember the other files were compressed !
+Then we can use ```deflate.py``` in the ```tools``` folder to decompress the image, remember the other files were compressed !
 
 ```
 shr3k@shr3k:~/bkcrack/install$ python3 tools/inflate.py < dark_style_raw.deflate > dark_style.jpg
