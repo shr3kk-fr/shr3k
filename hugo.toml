@@ -13,8 +13,8 @@ pluralizelisttitles = false
   pagerSize = 10
 
 [params]
-    brand = "$5hr3k"
-    description = "Student passionate about cybersecurity"
+    brand = "5hr3k"
+    description = "Cybersec enthousiast"
     dark_mode = true
     
     remote_brand_image = "https://images.steamusercontent.com/ugc/15093909593042542774/63E7D896729195E9FA8612FFEC7A40B630F68177/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
