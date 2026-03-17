@@ -1,8 +1,16 @@
 ---
 date: '2026-03-16T16:34:44+01:00'
-draft: true
-title: 'MCTF2026 | Where_is_China'
+draft: false
+title: 'Midnight Flag CTF 2026 | Where_is_China'
+keywords: ["osint", "geoint"]
+showtoc: true
+UseHugoToc: true
+tocopen: true 
+ShowReadingTime: true
+ShowWordCount: true
 ---
+
+Author : Evix
 
 ## Context
 

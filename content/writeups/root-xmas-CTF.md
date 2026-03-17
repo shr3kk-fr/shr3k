@@ -1,7 +1,7 @@
 ---
 date: '2025-12-10T10:19:30+01:00'
 draft: false
-title: 'PKZIP vulnerabilty | Root Me xmas CTF 2025'
+title: 'RMXMASCTF2025 | Santa memes'
 tags: ["misc", "stegano"]
 keywords: ["misc", "steagno"]
 showtoc: true
