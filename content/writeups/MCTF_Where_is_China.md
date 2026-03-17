@@ -2,6 +2,7 @@
 date: '2026-03-16T16:34:44+01:00'
 draft: false
 title: 'Midnight Flag CTF 2026 | Where_is_China'
+tags: ["osint", "geoint"]
 keywords: ["osint", "geoint"]
 showtoc: true
 UseHugoToc: true

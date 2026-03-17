@@ -6,10 +6,17 @@
     <description>Recent content in OSINT on </description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Dec 2025 16:14:57 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 16:34:44 +0100</lastBuildDate>
     <atom:link href="https://5hr3k.xyz/tags/osint/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Santa OSINT | Root Me xmas CTF 2025</title>
+      <title>Midnight Flag CTF 2026 | Where_is_China</title>
+      <link>https://5hr3k.xyz/writeups/mctf_where_is_china/</link>
+      <pubDate>Mon, 16 Mar 2026 16:34:44 +0100</pubDate>
+      <guid>https://5hr3k.xyz/writeups/mctf_where_is_china/</guid>
+      <description>&lt;p&gt;Author : Evix&lt;/p&gt;&#xA;&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;Chinese student who had been living in France for a year to study French recently returned to her home country for a short one-week vacation. A few days later, her body was found lifeless in a park in China. Local authorities are struggling to understand what happened to her. Before her disappearance, the young woman was very active on social media. Your mission is to retrace her steps and discover which park her body was found in.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Root Me Xmas CTF 2025 | Santa Root Kit</title>
       <link>https://5hr3k.xyz/writeups/osint-xmas-ctf/</link>
       <pubDate>Thu, 11 Dec 2025 16:14:57 +0100</pubDate>
       <guid>https://5hr3k.xyz/writeups/osint-xmas-ctf/</guid>
