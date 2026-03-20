@@ -1,7 +1,7 @@
 ---
 date: '2025-12-10T10:19:30+01:00'
 draft: false
-title: 'Root Me Xmas CTF 2025 | Santa memes'
+title: 'Root Me Xmas CTF 2025 | Santa Memes'
 tags: ["misc", "stegano"]
 keywords: ["misc", "stegano"]
 showtoc: true
@@ -12,24 +12,24 @@ ShowWordCount: true
 
 ---
 
-Author : Evix
+Author: Evix
 
 ## Context
 
-A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look... elf-incriminating.
+A mysterious ZIP archive has slipped down the chimney, straight from Santa's computer. You would like to take a glimpse at the files inside, in case they look... elf-incriminating.
 
-Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?
+Can you crack the archive and uncover the secret Santa hoped to keep under wraps?
 
-## Zip analysis
+## ZIP Analysis
 
-The zip file is protected with a password : 
+The ZIP file is protected with a password:
 ```
 shr3k@shr3k:~$ unzip santa-secret-memes.zip 
 Archive:  santa-secret-memes.zip
 [santa-secret-memes.zip] dark_style.jpg password:
 ```
 
-Let's take a look at our ```santa-secret-memes.zip``` using ```zipinfo```
+Let's take a look at our `santa-secret-memes.zip` using `zipinfo`:
 ```
 shr3k@shr3k:~$ zipinfo -Z santa-secret-memes.zip 
 
@@ -43,24 +43,25 @@ Zip file size: 605772 bytes, number of entries: 7
 -rw-r--r--  3.0 unx    81268 BX defN 25-Dec-09 02:05 raccoon.jpg
 -rw-r--r--  3.0 unx   109829 BX defN 25-Dec-09 02:05 rev_meme.jpg
 7 files, 605400 bytes uncompressed, 604474 bytes compressed:  0.2%
-
 ```
-Take a look at `stor`, this means no compression was applied to the 'portrait.jpg' file.
+
+Notice `stor` — this means no compression was applied to the `portrait.jpg` file.
 
 With this information we can perform a **Known Plaintext Attack** on the PKZIP stream cipher.
 
 To perform this attack we need to guess the first 12 bytes of the corresponding plaintext.
 
-The most common JPEG 12 bytes are ```FF D8 FF E0 00 10 4A 46 49 46 00 01```
+The most common JPEG 12-byte header is `FF D8 FF E0 00 10 4A 46 49 46 00 01`.
 
-## PKA attack using bkcrack
+## Known Plaintext Attack Using bkcrack
 
-Just write this out in a file ```jpg_header.bin```
+Write the header out to a file `jpg_header.bin`:
 
 ```
 shr3k@shr3k:~$ echo -ne '\xFF\xD8\xFF\xE0\x00\x10\x4A\x46\x49\x46\x00\x01' > jpg_header.bin
 ```
-Then we can use [bkcrack](https://github.com/kimci86/bkcrack) recover the internal keys
+
+Then we can use [bkcrack](https://github.com/kimci86/bkcrack) to recover the internal keys:
 
 ```
 shr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c portrait.jpg -p jpg_header.bin 
@@ -76,20 +77,23 @@ You may resume the attack with the option: --continue-attack 129829
 4c0a34dd 9f68579b 9fd87f2f
 ```
 
-After 2 minutes, we finally recover the keys ```4c0a34dd 9f68579b 9fd87f2f```.
+After 2 minutes, we recover the keys `4c0a34dd 9f68579b 9fd87f2f`.
 
-We can use them to recover all the archives files
+We can use them to decrypt all the archive's files:
 
 ```
 shr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c dark_style.jpg -k aca16b21 8fb459a8 89c3e395 -d dark_style_raw.jpg
 ```
-## Recover the images
-Then we can use ```deflate.py``` in the ```tools``` folder to decompress the image, remember the other files were compressed !
+
+## Recovering the Images
+
+Then we can use `deflate.py` in the `tools` folder to decompress the image — remember, the other files were compressed!
 
 ```
 shr3k@shr3k:~/bkcrack/install$ python3 tools/inflate.py < dark_style_raw.deflate > dark_style.jpg
 ```
-We get this nice meme
+
+We get this nice meme:
 
 {{< figure
     src="/image/pkzip.jpg"
@@ -97,13 +101,13 @@ We get this nice meme
     class="right"
 >}}
 
-## Stegano
+## Steganography
 
 After recovering all the images, there is no apparent flag.
 
-I decide to run an ```exiftool``` to see if there's any hidden information in the images.
+I decided to run `exiftool` to see if there's any hidden information in the images.
 
-After testing a bunch we get :
+After testing a few of them, we get:
 
 ```
 shr3k@shr3k:~$ exiftool dream.jpg
@@ -142,13 +146,14 @@ Image Size                      : 457x446
 Megapixels                      : 0.204
 ```
 
-Check this out, in the user comment we find a tool and a key.
+In the User Comment field, we find a tool and a key.
 
 ```
 shr3k@shr3k:~$ steghide extract -sf gn.jpg -p magic_key
-Ecriture des donnees extraites dans "flag.txt".
+Writing extracted data to "flag.txt".
 
 shr3k@shr3k:~$ cat flag.txt 
 RM{s4nt4_l0v3s_st3g4n0}
 ```
-Happy new year !
+
+Happy New Year!

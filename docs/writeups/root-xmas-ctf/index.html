@@ -56,11 +56,11 @@
 
 <!-- Open Graph image and Twitter Card metadata -->
 
-<title itemprop="name">5hr3k - Root Me Xmas CTF 2025 | Santa memes</title>
-<meta property="og:title" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;memes />
-<meta name="twitter:title" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;memes />
-<meta itemprop="name" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;memes />
-<meta name="application-name" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;memes />
+<title itemprop="name">5hr3k - Root Me Xmas CTF 2025 | Santa Memes</title>
+<meta property="og:title" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;Memes />
+<meta name="twitter:title" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;Memes />
+<meta itemprop="name" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;Memes />
+<meta name="application-name" content=5hr3k&#32;-&#32;Root&#32;Me&#32;Xmas&#32;CTF&#32;2025&#32;|&#32;Santa&#32;Memes />
 <meta property="og:site_name" content="" />
 
 
@@ -354,7 +354,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="post">
   <div class="info">
   <h1 class="post-title">
-    <a href="https://5hr3k.xyz/writeups/root-xmas-ctf/">Root Me Xmas CTF 2025 | Santa memes</a>
+    <a href="https://5hr3k.xyz/writeups/root-xmas-ctf/">Root Me Xmas CTF 2025 | Santa Memes</a>
   </h1>
 
   <div class="headline">
@@ -396,16 +396,16 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
   
 </div>
 
-  <p>Author : Evix</p>
+  <p>Author: Evix</p>
 <h2 id="context">Context</h2>
-<p>A mysterious ZIP archive has slipped down the chimney, straight from Santa’s computer. You would like to take a glimpse at the files inside, in case they look&hellip; elf-incriminating.</p>
-<p>Can you crack the archive and uncover the secret Santa hoped to keep under wraps ?</p>
-<h2 id="zip-analysis">Zip analysis</h2>
-<p>The zip file is protected with a password :</p>
+<p>A mysterious ZIP archive has slipped down the chimney, straight from Santa&rsquo;s computer. You would like to take a glimpse at the files inside, in case they look&hellip; elf-incriminating.</p>
+<p>Can you crack the archive and uncover the secret Santa hoped to keep under wraps?</p>
+<h2 id="zip-analysis">ZIP Analysis</h2>
+<p>The ZIP file is protected with a password:</p>
 <pre tabindex="0"><code>shr3k@shr3k:~$ unzip santa-secret-memes.zip 
 Archive:  santa-secret-memes.zip
 [santa-secret-memes.zip] dark_style.jpg password:
-</code></pre><p>Let&rsquo;s take a look at our <code>santa-secret-memes.zip</code> using <code>zipinfo</code></p>
+</code></pre><p>Let&rsquo;s take a look at our <code>santa-secret-memes.zip</code> using <code>zipinfo</code>:</p>
 <pre tabindex="0"><code>shr3k@shr3k:~$ zipinfo -Z santa-secret-memes.zip 
 
 Archive:  santa-secret-memes.zip
@@ -418,14 +418,14 @@ Zip file size: 605772 bytes, number of entries: 7
 -rw-r--r--  3.0 unx    81268 BX defN 25-Dec-09 02:05 raccoon.jpg
 -rw-r--r--  3.0 unx   109829 BX defN 25-Dec-09 02:05 rev_meme.jpg
 7 files, 605400 bytes uncompressed, 604474 bytes compressed:  0.2%
-</code></pre><p>Take a look at <code>stor</code>, this means no compression was applied to the &lsquo;portrait.jpg&rsquo; file.</p>
+</code></pre><p>Notice <code>stor</code> — this means no compression was applied to the <code>portrait.jpg</code> file.</p>
 <p>With this information we can perform a <strong>Known Plaintext Attack</strong> on the PKZIP stream cipher.</p>
 <p>To perform this attack we need to guess the first 12 bytes of the corresponding plaintext.</p>
-<p>The most common JPEG 12 bytes are <code>FF D8 FF E0 00 10 4A 46 49 46 00 01</code></p>
-<h2 id="pka-attack-using-bkcrack">PKA attack using bkcrack</h2>
-<p>Just write this out in a file <code>jpg_header.bin</code></p>
+<p>The most common JPEG 12-byte header is <code>FF D8 FF E0 00 10 4A 46 49 46 00 01</code>.</p>
+<h2 id="known-plaintext-attack-using-bkcrack">Known Plaintext Attack Using bkcrack</h2>
+<p>Write the header out to a file <code>jpg_header.bin</code>:</p>
 <pre tabindex="0"><code>shr3k@shr3k:~$ echo -ne &#39;\xFF\xD8\xFF\xE0\x00\x10\x4A\x46\x49\x46\x00\x01&#39; &gt; jpg_header.bin
-</code></pre><p>Then we can use <a href="https://github.com/kimci86/bkcrack" target="_blank">bkcrack</a> recover the internal keys</p>
+</code></pre><p>Then we can use <a href="https://github.com/kimci86/bkcrack" target="_blank">bkcrack</a> to recover the internal keys:</p>
 <pre tabindex="0"><code>shr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c portrait.jpg -p jpg_header.bin 
 bkcrack 1.8.1 - 2025-10-25
 [11:47:25] Z reduction using 5 bytes of known plaintext
@@ -437,20 +437,20 @@ Found a solution. Stopping.
 You may resume the attack with the option: --continue-attack 129829
 [11:49:47] Keys
 4c0a34dd 9f68579b 9fd87f2f
-</code></pre><p>After 2 minutes, we finally recover the keys <code>4c0a34dd 9f68579b 9fd87f2f</code>.</p>
-<p>We can use them to recover all the archives files</p>
+</code></pre><p>After 2 minutes, we recover the keys <code>4c0a34dd 9f68579b 9fd87f2f</code>.</p>
+<p>We can use them to decrypt all the archive&rsquo;s files:</p>
 <pre tabindex="0"><code>shr3k@shr3k:~/bkcrack/install$ ./bkcrack -C santa-secret-memes.zip -c dark_style.jpg -k aca16b21 8fb459a8 89c3e395 -d dark_style_raw.jpg
-</code></pre><h2 id="recover-the-images">Recover the images</h2>
-<p>Then we can use <code>deflate.py</code> in the <code>tools</code> folder to decompress the image, remember the other files were compressed !</p>
+</code></pre><h2 id="recovering-the-images">Recovering the Images</h2>
+<p>Then we can use <code>deflate.py</code> in the <code>tools</code> folder to decompress the image — remember, the other files were compressed!</p>
 <pre tabindex="0"><code>shr3k@shr3k:~/bkcrack/install$ python3 tools/inflate.py &lt; dark_style_raw.deflate &gt; dark_style.jpg
-</code></pre><p>We get this nice meme</p>
+</code></pre><p>We get this nice meme:</p>
 <figure class="right"><img src="/image/pkzip.jpg" width="200px">
 </figure>
 
-<h2 id="stegano">Stegano</h2>
+<h2 id="steganography">Steganography</h2>
 <p>After recovering all the images, there is no apparent flag.</p>
-<p>I decide to run an <code>exiftool</code> to see if there&rsquo;s any hidden information in the images.</p>
-<p>After testing a bunch we get :</p>
+<p>I decided to run <code>exiftool</code> to see if there&rsquo;s any hidden information in the images.</p>
+<p>After testing a few of them, we get:</p>
 <pre tabindex="0"><code>shr3k@shr3k:~$ exiftool dream.jpg
 ExifTool Version Number         : 12.76
 File Name                       : dream.jpg
@@ -485,13 +485,13 @@ Color Components                : 3
 Y Cb Cr Sub Sampling            : YCbCr4:4:4 (1 1)
 Image Size                      : 457x446
 Megapixels                      : 0.204
-</code></pre><p>Check this out, in the user comment we find a tool and a key.</p>
+</code></pre><p>In the User Comment field, we find a tool and a key.</p>
 <pre tabindex="0"><code>shr3k@shr3k:~$ steghide extract -sf gn.jpg -p magic_key
-Ecriture des donnees extraites dans &#34;flag.txt&#34;.
+Writing extracted data to &#34;flag.txt&#34;.
 
 shr3k@shr3k:~$ cat flag.txt 
 RM{s4nt4_l0v3s_st3g4n0}
-</code></pre><p>Happy new year !</p>
+</code></pre><p>Happy New Year!</p>
 
   
   <hr>
@@ -517,10 +517,10 @@ RM{s4nt4_l0v3s_st3g4n0}
       <nav id="TableOfContents">
   <ul>
     <li><a href="#context">Context</a></li>
-    <li><a href="#zip-analysis">Zip analysis</a></li>
-    <li><a href="#pka-attack-using-bkcrack">PKA attack using bkcrack</a></li>
-    <li><a href="#recover-the-images">Recover the images</a></li>
-    <li><a href="#stegano">Stegano</a></li>
+    <li><a href="#zip-analysis">ZIP Analysis</a></li>
+    <li><a href="#known-plaintext-attack-using-bkcrack">Known Plaintext Attack Using bkcrack</a></li>
+    <li><a href="#recovering-the-images">Recovering the Images</a></li>
+    <li><a href="#steganography">Steganography</a></li>
   </ul>
 </nav>
     </div>

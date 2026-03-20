@@ -371,7 +371,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
           
         
 
-        <span>2 mins read</span>
+        <span>3 mins read</span>
       </span>
     </div>
 
@@ -396,68 +396,66 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
   
 </div>
 
-  <p>Author : Evix</p>
+  <p>Author: Evix</p>
 <h2 id="context">Context</h2>
-<p>Chinese student who had been living in France for a year to study French recently returned to her home country for a short one-week vacation. A few days later, her body was found lifeless in a park in China. Local authorities are struggling to understand what happened to her. Before her disappearance, the young woman was very active on social media. Your mission is to retrace her steps and discover which park her body was found in.</p>
-<p>The victim’s name was Lin Xiayu, and she used the username<code>LinXiayu35170</code> on social media.</p>
+<p>A Chinese student who had been living in France for a year to study French recently returned to her home country for a short one-week vacation. A few days later, her body was found lifeless in a park in China. Local authorities are struggling to understand what happened to her. Before her disappearance, the young woman was very active on social media. Your mission is to retrace her steps and discover which park her body was found in.</p>
+<p>The victim&rsquo;s name was Lin Xiayu, and she used the username <code>LinXiayu35170</code> on social media.</p>
 <p>Flag format: MCTF{Xxxx_Xxxx}</p>
 <figure><img src="/image/montagne.png">
 </figure>
 
-<h2 id="social-media-search">Social Media search</h2>
-<p>Our first mission is to find the socials account of miss Lin Xiayu. We can proceed to input the <code>LinXiayu35170</code> username on <a href="https://whatsmyname.app/" target="_blank">WhatsMyName</a>.</p>
-<p>Nothing relevent so I decide to check on mainstreams socials like Facebook, Instagram, Twitter&hellip;</p>
-<p>We found 2 accounts on <a href="https://www.facebook.com/people/Lin-Xiayu/pfbid02hJB4m3ebYNpbp1erRUedrV8q4X7ZV2GEL63f5mSn3yPhjwJwrJqJ19zcWY5SbkGpl/?locale=fr_FR" target="_blank">Facebook</a> and <a href="https://x.com/LinXiayu35170" target="_blank">Twitter</a></p>
+<h2 id="social-media-search">Social Media Search</h2>
+<p>Our first mission is to find the social media accounts of Lin Xiayu. We can start by entering the <code>LinXiayu35170</code> username on <a href="https://whatsmyname.app/" target="_blank">WhatsMyName</a>.</p>
+<p>Nothing relevant came up, so I decided to check mainstream social media platforms like Facebook, Instagram, and Twitter.</p>
+<p>We found 2 accounts on <a href="https://www.facebook.com/people/Lin-Xiayu/pfbid02hJB4m3ebYNpbp1erRUedrV8q4X7ZV2GEL63f5mSn3yPhjwJwrJqJ19zcWY5SbkGpl/?locale=fr_FR" target="_blank">Facebook</a> and <a href="https://x.com/LinXiayu35170" target="_blank">Twitter</a>.</p>
 <h2 id="facebook">Facebook</h2>
-<p>On the Facebok account we can find an Image</p>
+<p>On the Facebook account we can find an image:</p>
 <figure><img src="/image/ville.jpg">
 </figure>
 
 <h2 id="twitter">Twitter</h2>
-<p>On the Twitter account we can find some tweets saying that she loves croissant ! I can understand I love them too vive la France !</p>
+<p>On the Twitter account we can find some tweets saying that she loves croissants — I can understand, I love them too, vive la France!</p>
 <figure><img src="/image/xiatwitter.png">
 </figure>
 
-<p>More interesting, if we check on the followers we can find a strange account @heaprunner named Lucas Juillet that says weird things like &ldquo;We think that we are sometimes alone, but we never really are&rdquo;</p>
+<p>More interestingly, if we check her followers we can find a strange account, @heaprunner, belonging to a user named Lucas Juillet, who says weird things like &ldquo;We think that we are sometimes alone, but we never really are.&rdquo;</p>
 <figure><img src="/image/heaprunner.png">
 </figure>
 
-<p>He even replied to one of Lin Xiayu tweets saying that &ldquo;Her accent is the most intersting thing about you&rdquo;</p>
+<p>He even replied to one of Lin Xiayu&rsquo;s tweets saying &ldquo;Her accent is the most interesting thing about you.&rdquo;</p>
 <figure><img src="/image/heaprunner_replies.png">
 </figure>
 
-<p>That&rsquo;s some weird behaviour, this person can likely be the killer, let&rsquo;s find some information on this heaprunner</p>
+<p>That&rsquo;s some suspicious behaviour — this person could likely be the killer. Let&rsquo;s find some more information on heaprunner.</p>
 <h2 id="lucas-juillet">Lucas Juillet</h2>
-<p>Since this guy have a Mr. Robot profile picture (an hacker series), I decide to check <code>heaprunner</code> username on github</p>
-<p>That&rsquo;s a nice hit</p>
+<p>Since this user has a Mr. Robot profile picture (a hacker TV series), I decided to look up the <code>heaprunner</code> username on GitHub.</p>
+<p>That&rsquo;s a good hit:</p>
 <figure><img src="/image/heaprunner_github.png">
 </figure>
 
-<p>Plus, there is an interesting repo named <code>pattern analysis</code></p>
-<p>Basically, it&rsquo;s supposed to analyse runner pattern&rsquo;s to get their location</p>
-<p>After checking the .py files there is on useful line on the <code>pattern_model.py</code></p>
-<pre tabindex="0"><code>class PatternModel:
-    def __init__(self):
-        self.history = []
-        self.threshold = 0.87
-        self.runner = &#34;lulu kicourt&#34;
-        self.active = True
-</code></pre><p>On the self.runner attribute, we find &ldquo;lulu kicourt&rdquo;, in french : lulu isrunning</p>
-<p>This is possibly a Strava account</p>
-<h2 id="strava-account">Strava account</h2>
-<p>When checking the username, we actually find someone who runs in China</p>
+<p>There is also an interesting repository named <code>pattern analysis</code>. It is supposed to analyse runner patterns to determine their location.</p>
+<p>After checking the <code>.py</code> files, there is one useful line in <code>pattern_model.py</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PatternModel</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>history <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.87</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>runner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lulu kicourt&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>active <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><p>In the <code>self.runner</code> attribute, we find &ldquo;lulu kicourt&rdquo; — in French, this roughly means &ldquo;lulu is running.&rdquo; This could be a Strava username.</p>
+<h2 id="strava-account">Strava Account</h2>
+<p>When searching for this username on Strava, we actually find someone who runs in China:</p>
 <figure><img src="/image/strava.png">
 </figure>
 
-<p>Zomming on the picture, her run end in a park, Zhao Park&hellip;</p>
+<p>Zooming in on the picture, her run ends in a park — Zhao Park&hellip;</p>
 <figure><img src="/image/park.png">
 </figure>
 
-<p>I tried to find the exact location on Google Map</p>
+<p>I then tried to find the exact location on Google Maps:</p>
 <figure><img src="/image/gmap.png">
 </figure>
 
-<p>Looking on the Zhao Park photos wich is in reality Zhaoyuan Park we find the exact image that were in the beginning</p>
+<p>Looking at the photos of Zhao Park — which is in fact Zhaoyuan Park — we find the exact image that was shown at the beginning of the challenge:</p>
 <figure><img src="/image/gmapfoto.png">
 </figure>
 
@@ -485,11 +483,11 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
       <nav id="TableOfContents">
   <ul>
     <li><a href="#context">Context</a></li>
-    <li><a href="#social-media-search">Social Media search</a></li>
+    <li><a href="#social-media-search">Social Media Search</a></li>
     <li><a href="#facebook">Facebook</a></li>
     <li><a href="#twitter">Twitter</a></li>
     <li><a href="#lucas-juillet">Lucas Juillet</a></li>
-    <li><a href="#strava-account">Strava account</a></li>
+    <li><a href="#strava-account">Strava Account</a></li>
   </ul>
 </nav>
     </div>
